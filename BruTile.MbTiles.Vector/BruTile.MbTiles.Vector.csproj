@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>Extension for BruTile to enable access to MapBox's vecror tile store files (MbTiles)</Description>
+        <PackageTags>tiling brutile mbtiles vector</PackageTags>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\BruTile\BruTile.csproj" />
+        <ProjectReference Include="..\BruTile.MbTiles\BruTile.MbTiles.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="Styles\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Styles\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="SkiaSharp" Version="2.88.8" />
+    </ItemGroup>
+</Project>
